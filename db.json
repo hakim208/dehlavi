@@ -1,0 +1,30 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "description": "project1.description",
+      "img": "/markers/img1.jpg",
+      "address": "project1.address",
+      "floors": 25,
+      "apartments": 150,
+      "area": "25000"    },
+    {
+      "id": 2,
+      "description": "project2.description",
+      "img": "/markers/img2.jpg",
+      "address": "project2.address",
+      "floors": 18,
+      "apartments": 120,
+      "area": "18000"
+    },
+    {
+      "id": 3,
+      "description": "project3.description",
+      "img": "/markers/img3.jpg",
+      "address": "project3.address",
+      "floors": 12,
+      "apartments": 80,
+      "area": "12000"
+    }
+  ]
+}
