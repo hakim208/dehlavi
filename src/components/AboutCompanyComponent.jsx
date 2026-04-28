@@ -124,7 +124,7 @@ const AboutCompanyComponent = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/markers/img2.jpg"
+                src="/img/img6.jpg"
                 alt="Modern building"
                 className="w-full h-[600px] object-cover"
               />

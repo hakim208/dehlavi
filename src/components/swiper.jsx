@@ -25,21 +25,21 @@ const Wwiper = () => {
       title: t('swiper.slide1.title') || "TABIAT RESIDENCE",
       subtitle: t('swiper.slide1.subtitle') || "ЖИТЬ В ГАРМОНИИ С ПРИРОДОЙ",
       description: t('swiper.slide1.description') || "СТАРТ ПРОДАЖ",
-      image: "/markers/img1.jpg",
+      image: "/img/img1.jpg",
     },
     {
       id: 2,
       title: t('swiper.slide2.title') || "НОВЫЙ ПРОЕКТ",
       subtitle: t('swiper.slide2.subtitle') || "В СЕРДЦЕ ГОРОДА",
       description: t('swiper.slide2.description') || "ПРЕДПРОДАЖИ ОТКРЫТЫ",
-      image: "/markers/img2.jpg",
+      image: "/img/img2.jpg",
     },
     {
       id: 3,
       title: t('swiper.slide3.title') || "ПРЕМИУМ КОМФОРТ",
       subtitle: t('swiper.slide3.subtitle') || "ДЛЯ ВАШЕЙ СЕМЬИ",
       description: t('swiper.slide3.description') || "ЭКСКЛЮЗИВНЫЕ ПЛАНИРОВКИ",
-      image: "/markers/img3.jpg"
+      image: "/img/img3.jpg"
     }
   ];
 

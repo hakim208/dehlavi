@@ -29,19 +29,6 @@ const Project = () => {
       setLoading(false);
     }
   };
-
-  const handleFilter = (filter) => {
-    setActiveFilter(filter);
-    if (filter === 'all') {
-      setFilteredProjects(projects);
-    } else {
-      const filtered = projects.filter(project =>
-        project.block === filter
-      );
-      setFilteredProjects(filtered);
-    }
-  };
-
   const handleProjectClick = (id) => {
     navigate(`/projects/${id}`);
   };

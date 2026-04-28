@@ -19,7 +19,6 @@ const OurProjects = () => {
       const response = await fetch('/db.json');
       const data = await response.json();
 
-      // Танҳо 3 протсекти аввалро барои нишон додан
       const recentProjects = data.projects.slice(0, 3);
 
       setProjects(recentProjects);
