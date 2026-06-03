@@ -1,47 +1,60 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from 'react-i18next';
-import { useFlatsStore } from "../entities/items/model/itemsStore";
+// Агар ApartmentCard ва ApartmentModal дар дигар файлҳо бошанд, ин ду хатро аз коммент гиред:
 import ApartmentCard from "./ApartmentCard";
 import ApartmentModal from "./ApartmentModal";
 
+const flatsData = [
+  {
+      id: 1,
+      floor: 1,
+      img: "/img/1honaga.png"
+  },
+  {
+      id: 2,
+      floor: 2,
+      img: "/img/2honaga.png"
+  },
+  {
+      id: 3,
+      floor: 3,
+      img: "/img/3honaga.png"
+  },
+  {
+      id: 4,
+      floor: 4,
+      img: "/img/4honaga.png"
+  },
+  {
+      id: 5,
+      floor: 5,
+      img: "/img/5honaga.png"
+  }
+];
+
+// 2. КОМПОНЕНТИ АСОСӢ
 export const ItemsList = () => {
   const { t } = useTranslation();
-  const { flats, fetchFlats, loading } = useFlatsStore();
 
   const [selectedFloor, setSelectedFloor] = useState(null);
-  const [selectedRoom, setSelectedRoom] = useState(null);
   const [selectedApartment, setSelectedApartment] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    fetchFlats();
-  }, [fetchFlats]);
-
+  // Ҳисоб кардани ошёнаҳои мавҷуда аз объект
   const availableFloors = useMemo(() => {
-    const floors = flats.map(f => f.floor);
+    const floors = flatsData.map(f => f.floor);
     return [...new Set(floors)].sort((a, b) => a - b);
-  }, [flats]);
+  }, []);
 
-  const availableRooms = useMemo(() => {
-    let currentFlats = flats;
-    if (selectedFloor) {
-      currentFlats = flats.filter(f => f.floor === selectedFloor);
-    }
-    const rooms = currentFlats.map(f => f.rooms).filter(r => r != null);
-    return [...new Set(rooms)].sort((a, b) => a - b);
-  }, [flats, selectedFloor]);
-
+  // Филтр кардани маълумот вобаста ба ошёнаи интихобшуда
   const filteredList = useMemo(() => {
-    return flats.filter(flat => {
-      const floorMatch = selectedFloor ? flat.floor === selectedFloor : true;
-      const roomMatch = selectedRoom ? flat.rooms === selectedRoom : true;
-      return floorMatch && roomMatch;
+    return flatsData.filter(flat => {
+      return selectedFloor ? flat.floor === selectedFloor : true;
     });
-  }, [flats, selectedFloor, selectedRoom]);
+  }, [selectedFloor]);
 
   const clearFilters = () => {
     setSelectedFloor(null);
-    setSelectedRoom(null);
   };
 
   return (
@@ -54,16 +67,13 @@ export const ItemsList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <label className="block text-gray-400 text-xs uppercase tracking-wider font-bold mb-3">
-              {t('apartment') || 'КВАРТИРА'}:
+              {t('apartment') || 'ОШЁНА'}:
             </label>
             <div className="flex gap-2 flex-wrap">
               {availableFloors.map((floor) => (
                 <button
                   key={floor}
-                  onClick={() => {
-                    setSelectedFloor(selectedFloor === floor ? null : floor);
-                    setSelectedRoom(null);
-                  }}
+                  onClick={() => setSelectedFloor(selectedFloor === floor ? null : floor)}
                   className={`w-11 h-11 rounded-xl font-bold transition-all border-2 flex items-center justify-center
                     ${selectedFloor === floor
                       ? 'bg-[#573D2D] text-white border-[#573D2D] shadow-md scale-110'
@@ -79,9 +89,9 @@ export const ItemsList = () => {
         {/* Статистика ва Тозакунӣ */}
         <div className="mt-8 pt-4 border-t border-gray-50 dark:border-gray-700 flex justify-between items-center">
           <p className="text-sm text-gray-500 italic">
-            {t('foundOptions') || 'Натиҷаҳо'} <span className="text-[#573D2D] font-bold">{filteredList.length}</span>
+            {t('foundOptions') || 'Натиҷаҳо:'} <span className="text-[#573D2D] font-bold">{filteredList.length}</span>
           </p>
-          {(selectedFloor || selectedRoom) && (
+          {selectedFloor && (
             <button onClick={clearFilters} className="text-xs font-bold text-red-400 hover:underline">
               {t('clearFilters') || 'Тоза кардани филтрҳо'}
             </button>

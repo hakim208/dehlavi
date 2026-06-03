@@ -11,7 +11,10 @@
   "completed": "Завершенные",
   "about": "О компании",
   "career": "Карьера",
+  "applicationForm":"Форма заявки",
+  "submitApplication": "Отправить заявку",
    "apartmentSelection": "Подбор квартиры",
+   "salesDepartment": "Отдел продаж",
    "swiper": {
     "learnMore": "Подробнее",
     "slide1": {
@@ -130,18 +133,20 @@
       "readMore": "Читать далее",
       "readFull": "Читать полностью",
       "backToNews": "Назад к новостям",
-      "selectNews": "Выберите новость из списка"    },
-      "loadingMessage": "Пожалуйста, подождите...",
-        "projectsTitle": "НАШИ ПРОЕКТЫ",
-        "projectsSubtitle": "Качественная строительная продукция",
-        "apartments": "квартир",
-        "project1Name": "Жилой комплекс премиум-класса",
-        "project1Description": "Жилой комплекс премиум-класса с современным дизайном",
-        "project1Address": "г. Душанбе, ул. Рудаки 123",
-        "project2Name": "Семейный жилой комплекс",
-        "project2Description": "Многоэтажный дом с торговыми помещениями",
+      "selectNews": "Выберите новость из списка"
+    },
+    "loadingMessage": "Пожалуйста, подождите...",
+    "projectsTitle": "НАШИ ПРОЕКТЫ",
+    "projectsSubtitle": "Качественная строительная продукция",
+    "apartments": "квартир",
+    "project1Name": "Жилой комплекс премиум-класса",
+    "project1Description": "Жилой комплекс премиум-класса с современным дизайном",
+    "project1Address": "г. Душанбе, ул. Рудаки 123",
+    "project2Name": "Семейный жилой комплекс",
+    "project2Description": "Многоэтажный дом с торговыми помещениями",
         "project2Address": "г. Худжанд, пр. Исмоили Сомони 45",
         "project3Name": "Современный жилой комплекс",
         "project3Description": "Современный жилой комплекс с подземным паркингом",
-        "project3Address": "г. Бохтар, мкр. Навобод 8"
+        "project3Address": "г. Бохтар, мкр. Навобод 8",
+        "back": "Назад"
 }

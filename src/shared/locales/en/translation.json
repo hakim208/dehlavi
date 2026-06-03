@@ -10,7 +10,10 @@
   "completed": "Completed",
   "about": "About",
   "career": "Career",
+  "applicationForm":"Application form",
+  "submitApplication": "Submit application",
    "apartmentSelection": "Apartment Selection",
+   "salesDepartment": "Sales Department",
    "swiper": {
     "learnMore": "Learn More",
     "slide1": {
@@ -121,5 +124,6 @@
     "project2Address": "Khujand, Ismoili Somoni avenue 45",
     "project3Name": "Modern residential complex",
     "project3Description": "Modern residential complex with underground parking",
-    "project3Address": "Bokhtar, Navobod district 8"
+    "project3Address": "Bokhtar, Navobod district 8",
+    "back": "Back"
 }

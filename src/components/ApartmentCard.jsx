@@ -16,7 +16,7 @@ const ApartmentCard = ({ apartment, onLearnMore }) => {
       <div className="relative h-56 overflow-hidden bg-gray-100">
         <motion.img
           src={apartment.img}
-          alt={`Apartment ${apartment.number}`}
+          alt={`Apartment ${apartment.floor}`}
           className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-110"
         />
 
@@ -39,7 +39,7 @@ const ApartmentCard = ({ apartment, onLearnMore }) => {
 
         <div className="mt-auto pt-3 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
           <div>
-            
+            {/* Агар хоҳед, ки дар ин ҷо нарх ё чизи дигар бошад, метавонед илова кунед */}
           </div>
           <button
             onClick={() => onLearnMore(apartment)}

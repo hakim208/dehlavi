@@ -1,15 +1,31 @@
 /* Transparent Swiper Styles */
 .mySwiper {
   background: transparent !important;
+  width: 100%;
+  height: auto; /* Барои он ки контейнер ба андозаи расм мувофиқ шавад */
 }
 
 .mySwiper .swiper-slide {
-  background: linear-gradient(135deg,
-  linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* ҚИСМҲОИ ИЛОВАШУДА */
+  height: auto; /* Баландии слайд ба баландии расм баробар мешавад */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Барои он ки кунҷҳои гирди слайд (border-radius) расмро аз кунҷҳояш дуруст барад */
+}
+
+/* ҚИСМИ ИЛОВАШУДА: Танзимоти расм дар дохили слайд */
+.mySwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto; /* Баландии расм мутаносибан (пропорционально) тағйир меёбад */
+  object-fit: cover;
 }
 
 /* Navigation buttons */

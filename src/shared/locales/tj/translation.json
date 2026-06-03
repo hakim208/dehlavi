@@ -11,7 +11,10 @@
   "completed": "Анҷомёфта",
   "about": "Дар бораи ширкат",
   "career": "Карера",
+  "applicationForm":"Дархост барои харид",
    "apartmentSelection": "Хонаҳои интихобӣ",
+   "submitApplication": "Фиристодани дархост",
+   "salesDepartment": "Шӯъбаи фурӯш",
    "swiper": {
     "learnMore": "Муфассал",
     "slide1": {
@@ -121,5 +124,6 @@
   "project2Address": "г. Хуҷанд, проспекти Исмоили Сомонӣ 45",
   "project3Name": "Комплекси манзилии муосир",
   "project3Description": "Комплекси манзилии муосир бо паркингҳои зеризаминӣ",
-  "project3Address": "г. Бохтар, ноҳияи Навобод 8"
+  "project3Address": "г. Бохтар, ноҳияи Навобод 8",
+  "back": "Бозгашт"
 }

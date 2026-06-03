@@ -1,65 +1,56 @@
+"use client";
+
 import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 
 export default function CustomMap() {
-  const points = [
-    {
-      id: 1,
-      coord: [38.576373, 68.786026],
-      title: "Душанбе, скойри тарафи 4-ум доми Аэропорт",
-      yandexUrl: "https://yandex.com/maps/?rtext=~38.576373,68.786026",
-    },
-  ];
+  const location = {
+    coords: [38.559772, 68.787038],
+  };
 
   return (
-    <div style={{ width: "100%", height: "500px", position: "relative" }}>
+    <div className="w-full h-full">
       <YMaps>
         <Map
           defaultState={{
-            center: [38.576373, 68.786026],
-            zoom: 14,
+            center: location.coords,
+            zoom: 17,
           }}
           width="100%"
           height="100%"
-        >
-          {points.map((point) => (
-            <Placemark
-              key={point.id}
-              geometry={point.coord}
-              options={{
-                iconLayout: "default#image",
-                iconImageHref: "/markers/office.jpg",
-                iconImageSize: [50, 50],
-                iconImageOffset: [-25, -50],
-              }}
-            />
-          ))}
-        </Map>
-      </YMaps>
-
-      {/* Кнопка берун аз карта */}
-      <div style={{
-        position: "absolute",
-        bottom: "20px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        zIndex: 10,
-      }}>
-        <a
-          href={points[0].yandexUrl}
-          target="_blank"
-          style={{
-            padding: "10px 20px",
-            background: "#ffcc00",
-            color: "#000",
-            borderRadius: "6px",
-            textDecoration: "none",
-            fontWeight: "500",
-            fontSize: "14px",
+          modules={[
+            "control.ZoomControl",
+            "control.FullscreenControl",
+          ]}
+          options={{
+            suppressMapOpenBlock: true,
+            yandexMapDisablePoiInteractivity: false,
           }}
         >
-          Открыть маршрут в Yandex Maps
-        </a>
-      </div>
+          <Placemark
+            geometry={location.coords}
+            properties={{
+              balloonContent: `
+                <div style="padding:10px;">
+                  <h2 style="font-size:18px;font-weight:700;">
+                    📍 Наш офис
+                  </h2>
+
+                  <p>
+                    г. Душанбе, ул. Малика Собирова 55
+                  </p>
+
+                  <p style="color:gray;">
+                    Ориентир: Hilton, Isra
+                  </p>
+                </div>
+              `,
+            }}
+            options={{
+              preset: "islands#redIcon",
+            }}
+          />
+        </Map>
+      </YMaps>
     </div>
   );
 }

@@ -218,7 +218,7 @@ const ConsultationSection = () => {
                   {/* Phone Number Input */}
                   <div className="relative flex-1">
                     <input
-                      type="tel"
+                      type="number"
                       id="phone"
                       name="phone"
                       value={formData.phone}

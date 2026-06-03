@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Loading from '../components/LoadingGlobal'; 
+import Loading from '../components/LoadingGlobal';
 import { useThemeStore } from '../shared/lib/zustandStore';
 import Footer from '../widgets/footer/footer';
 import Sidebar from '../widgets/sidebar/Sidebar';

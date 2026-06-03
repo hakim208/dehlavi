@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
-import { DollarSign, Home, Phone, Send, User, X } from 'lucide-react';
+import { Home, Phone, Send, User, X } from 'lucide-react';
 import { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 
@@ -33,6 +33,7 @@ const ApartmentModal = ({ isOpen, onClose, apartment }) => {
                       `📱 Телефон: ${fullPhone}\n` +
                       `⏰ Время: ${new Date().toLocaleString()}`;
 
+      // Ирсол ба Telegram Bot
       await axios.post(`https://api.telegram.org/bot8225601828:AAHATMxK8myZTsnbiqAg9hjld_bVrUk7Knc/sendMessage`, {
         chat_id: "6153606408",
         text: message
@@ -83,9 +84,8 @@ const ApartmentModal = ({ isOpen, onClose, apartment }) => {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="w-[100%]">
               <InfoCard icon={<Home size={20}/>} label={t('rooms') || "Ҳуҷраҳо"} value={apartment.floor} />
-              <InfoCard icon={<DollarSign size={20}/>} label={t('price') || "Нарх"} value={apartment.price ? `$${apartment.price.toLocaleString()}` : "Бо маслиҳат"} color="text-green-600" />
             </div>
           </div>
 
@@ -139,22 +139,22 @@ const ApartmentModal = ({ isOpen, onClose, apartment }) => {
                         onChange={(e) => setFormData({...formData, countryCode: e.target.value})}
                       >
                         <option value="+992">🇹🇯 +992 (Таджикистан)</option>
-                      <option value="+7">🇷🇺 +7 (Россия)</option>
-                      <option value="+998">🇺🇿 +998 (Узбекистан)</option>
-                      <option value="+996">🇰🇬 +996 (Кыргызстан)</option>
-                      <option value="+770">🇰🇿 +770 (Казахстан)</option>
-                      <option value="+993">🇹🇲 +993 (Туркменистан)</option>
-                      <option value="+90">🇹🇷 +90 (Турция)</option>
-                      <option value="+86">🇨🇳 +86 (Китай)</option>
-                      <option value="+1">🇺🇸 +1 (США)</option>
-                      <option value="+1">🇨🇦 +1 (Канада)</option>
-                      <option value="+44">🇬🇧 +44 (Великобритания)</option>
+                        <option value="+7">🇷🇺 +7 (Россия)</option>
+                        <option value="+998">🇺🇿 +998 (Узбекистан)</option>
+                        <option value="+996">🇰🇬 +996 (Кыргызстан)</option>
+                        <option value="+770">🇰🇿 +770 (Казахстан)</option>
+                        <option value="+993">🇹🇲 +993 (Туркменистан)</option>
+                        <option value="+90">🇹🇷 +90 (Турция)</option>
+                        <option value="+86">🇨🇳 +86 (Китай)</option>
+                        <option value="+1">🇺🇸 +1 (США)</option>
+                        <option value="+1">🇨🇦 +1 (Канада)</option>
+                        <option value="+44">🇬🇧 +44 (Великобритания)</option>
                       </select>
                       <div className="relative flex-1">
                         <Phone className="absolute left-3 top-3 text-gray-400" size={18} />
                         <input
                           required
-                          type="tel"
+                          type="number"
                           placeholder="93 500 00 00"
                           className="w-full pl-10 pr-4 py-3 bg-gray-100 dark:bg-gray-800 border-none rounded-xl focus:ring-2 focus:ring-[#573D2D] transition"
                           value={formData.phone}
