@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const AboutCompanyComponent = () => {
   const { t } = useTranslation();
+  //hello
 
   const stats = [
     { number: "21", label: t('aboutCompony.yearsOnMarket') || "год на рынке" },
