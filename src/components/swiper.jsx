@@ -22,20 +22,20 @@ const Wwiper = () => {
   const slides = [
     {
       id: 1,
-      imgLogo: "/img/img22.png",
-      image: "/img/img1.jpg",
+      imgLogo: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681888/img22_c0ijzh.png",
+      image: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681626/img1_bujsh2.jpg",
     },
     {
       id: 2,
       title: t('swiper.slide2.title') || "НОВЫЙ ПРОЕКТ",
       subtitle: t('swiper.slide2.subtitle') || "В СЕРДЦЕ ГОРОДА",
-      image: "/img/img2.jpg",
+      image: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681657/img2_fzikis.jpg",
     },
     {
       id: 3,
       title: t('swiper.slide3.title') || "ПРЕМИУМ КОМФОРТ",
       subtitle: t('swiper.slide3.subtitle') || "ДЛЯ ВАШЕЙ СЕМЬИ",
-      image: "/img/img3.jpg"
+      image: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681687/img3_gvz6wr.jpg"
     }
   ];
 

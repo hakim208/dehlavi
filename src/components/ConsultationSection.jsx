@@ -107,7 +107,7 @@ const ConsultationSection = () => {
   {/* Тасвири замина - вақте ки имконият дорад, идома диҳед */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url(/markers/img1.jpg)`,
+          backgroundImage: `url(https://res.cloudinary.com/dtvuzg801/image/upload/v1780681626/img1_bujsh2.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

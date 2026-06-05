@@ -5,6 +5,7 @@ import { useThemeStore } from '../shared/lib/zustandStore';
 import Footer from '../widgets/footer/footer';
 import Sidebar from '../widgets/sidebar/Sidebar';
 import Router from './router/Router';
+import { HelmetProvider } from "react-helmet-async"; // 1. Импорт кунед
 
 export default function App() {
   const { theme } = useThemeStore()
@@ -27,6 +28,7 @@ export default function App() {
   if (loading) return <Loading />   // ⬅️ Глобальный лоадинг
 
   return (
+    <HelmetProvider>
     <BrowserRouter>
       <div className="min-h-screen bg-white dark:bg-[#071122]">
         <Sidebar footerRef={footerRef} />
@@ -36,5 +38,6 @@ export default function App() {
         <Footer ref={footerRef} />
       </div>
     </BrowserRouter>
+    </HelmetProvider>
   )
 }

@@ -229,7 +229,7 @@ export default function Header({ footerRef }) {
         </div>
       </header>
 
-      <div className="flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
+      <div className="md:hidden flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
   {/* Left Side */}
   <div className="flex items-center gap-3">
     <Link to="/">

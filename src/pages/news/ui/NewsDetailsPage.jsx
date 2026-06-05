@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { LoadingComponent } from "../../../components/loading";
 import { useNewsStore } from "../../../entities/items/model/newsStore";
+import { Helmet } from "react-helmet-async";
 
 const NewsDetailsPage = () => {
   const { t, i18n } = useTranslation();
@@ -45,6 +46,31 @@ const NewsDetailsPage = () => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-7xl md:mt-[40px] mx-auto px-4 py-8 md:py-12">
+      <Helmet>
+        {/* 1. Сарлавҳа ва тавсифи асосӣ барои Google */}
+        <title>{localizedData.title} | ЖК Дехлави</title>
+        <meta name="description" content={localizedData.short} />
+
+        {/* 2. Open Graph (Барои зебо баромадани линк дар Telegram, WhatsApp, Facebook) */}
+        <meta property="og:title" content={`${localizedData.title} | ЖК Дехлави`} />
+        <meta property="og:description" content={localizedData.short} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={typeof window !== 'undefined' ? window.location.href : ''} />
+
+        {/* Агар хабар расм дошта бошад, онро нишон медиҳад */}
+        {images && images.length > 0 && (
+          <meta property="og:image" content={images[0]} />
+        )}
+
+        {/* 3. Twitter Card (Барои шабакаҳои иҷтимоӣ) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${localizedData.title} | ЖК Дехлави`} />
+        <meta name="twitter:description" content={localizedData.short} />
+        {images && images.length > 0 && (
+          <meta name="twitter:image" content={images[0]} />
+        )}
+      </Helmet>
+
       <motion.a initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} href="/news" className="inline-flex items-center gap-2 text-[#c8a461] hover:text-[#a88441] mb-6 text-sm md:text-base">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 md:w-5 md:h-5 rotate-180">
           <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clipRule="evenodd" />
@@ -66,8 +92,10 @@ const NewsDetailsPage = () => {
       >
         {isVideo ? (
           <video
-            src={activeMedia}
+            // ИЛОВАИ НАВ: Автоматӣ видеоро хурд ва сабук мекунад
+            src={activeMedia.replace('/upload/', '/upload/q_auto,f_auto/')}
             controls
+            preload="metadata" // ИЛОВАИ НАВ: Интернетро сарфа мекунад
             controlsList="nodownload noremoteplayback"
             className="w-[90%] max-w-[350px] md:max-w-[450px] h-[500px] md:h-[700px] object-cover rounded-2xl shadow-xl"
           />

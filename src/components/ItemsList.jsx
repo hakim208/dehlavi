@@ -8,27 +8,27 @@ const flatsData = [
   {
       id: 1,
       floor: 1,
-      img: "/img/1honaga.png"
+      img: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681346/1honaga_cu50sy.png"
   },
   {
       id: 2,
       floor: 2,
-      img: "/img/2honaga.png"
+      img: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681482/2honaga_otkqcr.png"
   },
   {
       id: 3,
       floor: 3,
-      img: "/img/3honaga.png"
+      img: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681506/3honaga_drfjy9.png"
   },
   {
       id: 4,
       floor: 4,
-      img: "/img/4honaga.png"
+      img: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681535/4honaga_n1k1zv.png"
   },
   {
       id: 5,
       floor: 5,
-      img: "/img/5honaga.png"
+      img: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681564/5honaga_hpznw7.png"
   }
 ];
 

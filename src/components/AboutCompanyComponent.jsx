@@ -124,7 +124,7 @@ const AboutCompanyComponent = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/img/img6.jpg"
+                src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780681744/img4_r4gjqs.jpg"
                 alt="Modern building"
                 className="w-full h-[600px] object-cover"
               />
