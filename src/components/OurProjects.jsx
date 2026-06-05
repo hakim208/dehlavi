@@ -1,33 +1,23 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+// ⬅️ Ислоҳ шуд: Импорт кардани худи useNewsStore ба ҷои функсия
+import { useNewsStore } from '../entities/items/model/newsStore';
 
 const OurProjects = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+
+  // ⬅️ Ислоҳ шуд: Даъвати дурусти Zustand стор мисли саҳифаи Project
+  const { projects, fetchProjects, loading } = useNewsStore();
 
   useEffect(() => {
     fetchProjects();
   }, []);
 
-  const fetchProjects = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch('/db.json');
-      const data = await response.json();
-
-      const recentProjects = data.projects.slice(0, 3);
-
-      setProjects(recentProjects);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching projects:', error);
-      setLoading(false);
-    }
-  };
+  // Танҳо 3 лоиҳаи аввалро барои саҳифаи асосӣ мебурем (slice)
+  const recentProjects = projects ? projects.slice(0, 3) : [];
 
   const handleViewProjects = () => {
     navigate('/projects');
@@ -42,7 +32,7 @@ const OurProjects = () => {
       <div className='max-w-7xl mx-auto px-4 mt-[50px] py-12'>
         <div className="text-center py-12">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#573D2D] mx-auto"></div>
-          <p className="mt-4 text-gray-600">{t('loading')}</p>
+          <p className="mt-4 text-gray-600">{t('loading') || "Боргузорӣ..."}</p>
         </div>
       </div>
     );
@@ -75,7 +65,7 @@ const OurProjects = () => {
 
       {/* Projects Grid */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-        {projects.map((project, index) => (
+        {recentProjects.map((project, index) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 50 }}
@@ -100,12 +90,12 @@ const OurProjects = () => {
             <div className="p-6">
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#573D2D] transition-colors duration-300">
-                  {t(`project${project.id}Name`)}
+                  {t(`project${project.id}Name`) || project.name}
                 </h3>
 
                 <div className="mt-2">
                   <p className="text-sm text-gray-600 line-clamp-2">
-                    {t(`project${project.id}Description`)}
+                    {t(`project${project.id}Description`) || project.description}
                   </p>
                 </div>
               </div>
@@ -133,7 +123,7 @@ const OurProjects = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>{t(`project${project.id}Address`)}</span>
+                  <span>{t(`project${project.id}Address`) || project.address}</span>
                 </div>
               </div>
             </div>

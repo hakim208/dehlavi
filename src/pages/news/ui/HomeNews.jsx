@@ -1,4 +1,3 @@
-// HomeNews.jsx
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -15,15 +14,13 @@ export const HomeNews = () => {
   }, []);
 
   if (loading || news.length === 0) {
-    return <LoadingComponent/>;
+    return <LoadingComponent />;
   }
 
-  // Танҳо 3 хабарро барои Home нишон диҳем
   const homeNews = news.slice(0, 3);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
-      {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
@@ -45,29 +42,16 @@ export const HomeNews = () => {
         </motion.a>
       </div>
 
-      {/* News Grid дар Home - 3 карт */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {homeNews.map((item, index) => {
-         // Забонро аз localStorage гирем
-const currentLanguage =
-localStorage.getItem("app_lang") ||
-i18n.language ||
-"ru";
+          const currentLanguage = localStorage.getItem("app_lang") || i18n.language || "ru";
 
-// Матнҳо ба забон
-const itemTitle =
-typeof item.title === "object"
-  ? item.title[currentLanguage] || item.title.ru
-  : item.title;
-
-const itemShort =
-typeof item.short === "object"
-  ? item.short[currentLanguage] || item.short.ru
-  : item.short;
-
-
-          // Гирфтани аввалин тасвир аз массив
+          const itemTitle = typeof item.title === "object" ? item.title[currentLanguage] || item.title.ru : item.title;
+          const itemShort = typeof item.short === "object" ? item.short[currentLanguage] || item.short.ru : item.short;
           const displayImage = Array.isArray(item.img) ? item.img[0] : item.img;
+
+          // Текшириши формат
+          const isVideo = displayImage?.endsWith(".mp4");
 
           return (
             <motion.div
@@ -77,23 +61,33 @@ typeof item.short === "object"
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white rounded-xl dark:bg-black dark:text-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
             >
-                {/* Image - Танҳо аввалин тасвир */}
-                <div className="relative md:h-[400px] h-48 overflow-hidden">
+              <div className="relative md:h-[400px] h-48 overflow-hidden">
+                {/* ⬇️ Ислоҳи ҳушманд барои подкасти видео */}
+                {isVideo ? (
+                  <video
+                    src={displayImage}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
                   <img
                     src={displayImage}
                     alt={itemTitle}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">
-                    {item.date}
-                  </div>
+                )}
+                <div className="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                  {item.date}
                 </div>
+              </div>
 
-                {/* Content */}
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold mb-2 line-clamp-2">{itemTitle}</h3>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{itemShort}</p>
-                  <Link to={`/news/${item.id}`} >
+              <div className="p-5">
+                <h3 className="text-lg font-semibold mb-2 line-clamp-2">{itemTitle}</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">{itemShort}</p>
+                <Link to={`/news/${item.id}`} >
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-[#c8a461] font-medium">
                       {t('newss.readMore')}
@@ -103,8 +97,9 @@ typeof item.short === "object"
                         <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-3 3a.75.75 0 11-1.06-1.06l1.72-1.72H8.25a.75.75 0 010-1.5h5.69l-1.72-1.72a.75.75 0 011.06-1.06l3 3z" clipRule="evenodd" />
                       </svg>
                     </div>
-                  </div></Link>
-                </div>
+                  </div>
+                </Link>
+              </div>
             </motion.div>
           );
         })}

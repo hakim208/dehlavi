@@ -33,7 +33,7 @@ const ById = () => {
   if (!project) return <div className="h-screen flex items-center justify-center text-xl">Loyiha topilmadi.</div>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 mt-[50px] py-12">
+    <div className="max-w-7xl mx-auto px-4 md:mt-[50px] py-12">
       {/* Orqaga qaytish tugmasi */}
       <motion.button
         initial={{ opacity: 0 }}

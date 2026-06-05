@@ -48,7 +48,7 @@ const AboutCompanyComponent = () => {
   };
 
   return (
-    <section className="md:mt-[60px] border-t-8 border-[#573D2D] mt-[30px] relative min-h-screen flex items-center py-20 overflow-hidden">
+    <section className=" border-t-8 border-[#573D2D] relative min-h-screen flex items-center py-20 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -102,7 +102,7 @@ const AboutCompanyComponent = () => {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: index * 0.1 + 0.8, type: "spring" }}
-                    className="text-3xl md:text-xl font-bold text-[#D9B45E] mb-2"
+                    className="text-sm md:text-xl font-bold text-[#D9B45E] mb-2"
                   >
                     {stat.number}
                   </motion.div>

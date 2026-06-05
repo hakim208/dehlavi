@@ -30,7 +30,7 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen bg-white dark:bg-[#071122]">
         <Sidebar footerRef={footerRef} />
-        <main className="flex-1">
+        <main className="">
           <Router />
         </main>
         <Footer ref={footerRef} />

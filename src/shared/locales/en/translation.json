@@ -76,7 +76,7 @@
   "aboutCompony": {
     "title": "About Company",
     "subtitle": "One of the leading and experienced developers",
-    "description": "Murad Buildings, a team of professionals that has become a single family, united by the unity of thought and spirit in the name of creating unique real estate objects, designed to bring happiness, joy and comfort to people!",
+    "description": "At DEHLAVI, we are more than just a team—we are a family united by a shared vision. We don't just construct buildings; we create a unique environment for life. Our mission is to deliver comfort, certainty for tomorrow, and true happiness!",
     "yearsOnMarket": "years on market",
     "successfulProjects": "successful projects",
     "brandAwards": "Brand of the Year awards",
@@ -125,5 +125,6 @@
     "project3Name": "Modern residential complex",
     "project3Description": "Modern residential complex with underground parking",
     "project3Address": "Bokhtar, Navobod district 8",
-    "back": "Back"
+    "back": "Back",
+    "home": "Home"
 }

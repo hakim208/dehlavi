@@ -4,6 +4,7 @@ const API = import.meta.env.VITE_URL_MOKYNDEV;
 
 export const useNewsStore = create((set) => ({
   news: [],
+  projects: [], 
   newsById: null,
   loading: false,
   error: null,
@@ -27,4 +28,14 @@ export const useNewsStore = create((set) => ({
       set({ error, loading: false });
     }
   },
+
+  fetchProjects: async () => {
+    try {
+      set({ loading: true });
+      const { data } = await axios.get(`${API}/projects`);
+      set({ projects: data, loading: false });
+    } catch (error) {
+      set({ error, loading: false });
+    }
+  }
 }));

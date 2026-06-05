@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Facebook,
@@ -8,6 +7,7 @@ import {
   MessageCircle,
   Send,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
@@ -154,13 +154,6 @@ export default function Header({ footerRef }) {
                   </Link>
                 );
               })}
-
-              <button
-                onClick={scrollToFooter}
-                className="text-white hover:text-[#D4A017]"
-              >
-                {t("contacts")}
-              </button>
             </div>
 
             {/* RIGHT */}
@@ -236,76 +229,34 @@ export default function Header({ footerRef }) {
         </div>
       </header>
 
-      {/* MOBILE HEADER */}
-      <header
-        className="
-          lg:hidden
-          fixed top-0 left-0 right-0 z-50
-          bg-[#573D2D]
-          border-b border-[#8B5A2B]
-        "
-      >
-        <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
+  {/* Left Side */}
+  <div className="flex items-center gap-3">
+    <Link to="/">
+      <img
+        src="/markers/logo3d.png"
+        alt="logo"
+        className="w-10 h-10 object-contain"
+      />
+    </Link>
 
-          <button
-            onClick={() =>
-              setIsMobileMenuOpen(
-                !isMobileMenuOpen
-              )
-            }
-            className="text-white text-2xl"
-          >
-            <i
-              className={`fas ${
-                isMobileMenuOpen
-                  ? "fa-times"
-                  : "fa-bars"
-              }`}
-            />
-          </button>
+    <a
+      href="tel:+992077000666"
+      className="flex items-center gap-2 text-white text-sm font-medium"
+    >
+      <i className="fas fa-phone-alt text-xs"></i>
+      <span>+992 077 000 666</span>
+    </a>
+  </div>
 
-          <Link to="/">
-            <img
-              src="/markers/logo3d.png"
-              alt="logo"
-              className="w-12 h-12"
-            />
-          </Link>
-
-          <button
-            onClick={toggleTheme}
-            className="text-white"
-          >
-            {theme === "light" ? "🌙" : "☀️"}
-          </button>
-        </div>
-
-        {/* MOBILE MENU */}
-        {isMobileMenuOpen && (
-          <div className="bg-[#573D2D] border-t border-[#8B5A2B] px-4 py-4 flex flex-col gap-4">
-
-            {navItems.map((item) => (
-              <Link
-                key={item.id}
-                to={item.path}
-                onClick={() =>
-                  setIsMobileMenuOpen(false)
-                }
-                className="text-white"
-              >
-                {item.label}
-              </Link>
-            ))}
-
-            <button
-              onClick={scrollToFooter}
-              className="text-left text-white"
-            >
-              {t("contacts")}
-            </button>
-          </div>
-        )}
-      </header>
+  {/* Right Side */}
+  <button
+    onClick={toggleTheme}
+    className="text-white text-xl"
+  >
+    {theme === "light" ? "🌙" : "☀️"}
+  </button>
+</div>
 
       {/* MOBILE BOTTOM NAV */}
       <motion.nav
@@ -314,7 +265,7 @@ export default function Header({ footerRef }) {
         className="
           lg:hidden
           fixed bottom-0 left-0 right-0 z-50
-          bg-[#573D2D]/95
+          bg-[#573D2D]
           backdrop-blur-xl
           border-t border-[#8B5A2B]
         "

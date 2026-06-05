@@ -7,6 +7,7 @@ const ApartmentCard = ({ apartment, onLearnMore }) => {
   return (
     <motion.div
       layout
+      onClick={() => onLearnMore(apartment)}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
@@ -42,7 +43,6 @@ const ApartmentCard = ({ apartment, onLearnMore }) => {
             {/* Агар хоҳед, ки дар ин ҷо нарх ё чизи дигар бошад, метавонед илова кунед */}
           </div>
           <button
-            onClick={() => onLearnMore(apartment)}
             className="p-2 bg-gray-50 dark:bg-gray-700 rounded-full group-hover:bg-[#573D2D] group-hover:text-white transition-colors"
           >
             <ArrowRight className="w-5 h-5" />

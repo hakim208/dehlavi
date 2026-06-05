@@ -23,10 +23,10 @@ const IconLink = ({ href, label, children }) => (
 );
 
 
-export default function Footer({ ref }) {
+export default function Footer() {
   const {t}=useTranslation()
   return (
-    <footer ref={ref} id="footer" className="bg-[#573D2D] md:mt-[50px] mt-[20px] text-white pt-16 pb-10 relative">
+    <footer  className="bg-[#573D2D] text-white pt-16 pb-10 relative">
 
       {/* TOP PART — LEFT TEXT + MAP */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
