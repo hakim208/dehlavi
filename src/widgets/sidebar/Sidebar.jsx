@@ -126,7 +126,7 @@ export default function Header({ footerRef }) {
             <div className="flex items-center gap-6">
               <Link to="/">
                 <img
-                  src="/markers/logo3d.png"
+                  src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780684045/logo3d_nd8ga5.png"
                   alt="logo"
                   className="w-14 h-14 object-contain"
                 />
@@ -234,7 +234,7 @@ export default function Header({ footerRef }) {
   <div className="flex items-center gap-3">
     <Link to="/">
       <img
-        src="/markers/logo3d.png"
+        src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780684045/logo3d_nd8ga5.png"
         alt="logo"
         className="w-10 h-10 object-contain"
       />
@@ -317,7 +317,7 @@ export default function Header({ footerRef }) {
               "
             >
               <img
-                src="/markers/logo3d.png"
+                src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780684045/logo3d_nd8ga5.png"
                 alt="logo"
                 className="w-10 h-10"
               />

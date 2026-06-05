@@ -4,7 +4,7 @@ export default function Loading() {
       <div className="relative">
         {/* Логои асосӣ - калонтар */}
         <img
-          src="/markers/logo.png"
+          src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780684018/logo_bnmyvg.png"
           alt="loading"
           className="w-32 h-32 md:w-40 md:h-40 animate-pulse"
         />
