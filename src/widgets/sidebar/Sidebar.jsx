@@ -138,22 +138,22 @@ export default function Header({ footerRef }) {
 
                 return (
                   <Link
-  key={item.id}
-  to={item.path}
-  className={`
+                    key={item.id}
+                    to={item.path}
+                    className={`
     transition-all font-medium px-3 py-2
     hover:text-[#D4A017]
     hover:border hover:border-[#D4A017]
     hover:rounded-xl
 
     ${isActive
-      ? "text-[#D4A017] border border-[#D4A017] rounded-xl"
-      : "text-white border border-transparent"
-    }
+                        ? "text-[#D4A017] border border-[#D4A017] rounded-xl"
+                        : "text-white border border-transparent"
+                      }
   `}
->
-  {item.label}
-</Link>
+                  >
+                    {item.label}
+                  </Link>
                 );
               })}
             </div>
@@ -232,33 +232,63 @@ export default function Header({ footerRef }) {
       </header>
 
       <div className="md:hidden sm:blok flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
-  {/* Left Side */}
-  <div className="flex items-center gap-3">
-    <Link to="/">
-      <img
-        src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780684045/logo3d_nd8ga5.png"
-        alt="logo"
-        className="w-10 h-10 object-contain"
-      />
-    </Link>
+        {/* Left Side */}
+        <div className="flex items-center gap-3">
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780684045/logo3d_nd8ga5.png"
+              alt="logo"
+              className="w-10 h-10 object-contain"
+            />
+          </Link>
 
-    <a
-      href="tel:+992077000666"
-      className="flex items-center gap-2 text-white text-sm font-medium"
-    >
-      <i className="fas fa-phone-alt text-xs"></i>
-      <span>+992 077 000 666</span>
-    </a>
-  </div>
+          <a
+            href="tel:+992077000666"
+            className="flex items-center gap-2 text-white text-sm font-medium"
+          >
+            <i className="fas fa-phone-alt text-xs"></i>
+            <span>+992 077 000 666</span>
+          </a>
+        </div>
+        <div className="flex items-center">
+          <select
+            value={lang}
+            onChange={(e) =>
+              changeLanguage(e.target.value)
+            }
+            className="
+                  bg-[#6d4b38]
+                  text-white
+                  px-1 py-1
+                  rounded-lg
+                  outline-none
+                  text-[11px]
+                "
+          >
+            <option value="ru">🇷🇺 RU</option>
+            <option value="en">🇺🇸 EN</option>
+            <option value="tj">🇹🇯 TJ</option>
+          </select>
 
-  {/* Right Side */}
-  <button
-    onClick={toggleTheme}
-    className="text-white text-xl"
-  >
-    {theme === "light" ? "🌙" : "☀️"}
-  </button>
-</div>
+          <button
+            onClick={toggleTheme}
+            className="
+                  w-12 h-12 rounded-full
+                  bg-[#6d4b38]
+                  flex items-center justify-center
+                  text-white
+                "
+          ></button>
+
+          {/* Right Side */}
+          <button
+            onClick={toggleTheme}
+            className="text-white text-xl"
+          >
+            {theme === "light" ? "🌙" : "☀️"}
+          </button>
+        </div>
+      </div>
 
       {/* MOBILE BOTTOM NAV */}
       <motion.nav
@@ -289,11 +319,10 @@ export default function Header({ footerRef }) {
                 "
               >
                 <i
-                  className={`fas ${item.icon} ${
-                    isActive
-                      ? "text-[#D4A017]"
-                      : "text-white"
-                  }`}
+                  className={`fas ${item.icon} ${isActive
+                    ? "text-[#D4A017]"
+                    : "text-white"
+                    }`}
                 />
 
                 <span className="text-[11px] text-white mt-1">
@@ -341,11 +370,10 @@ export default function Header({ footerRef }) {
                 "
               >
                 <i
-                  className={`fas ${item.icon} ${
-                    isActive
-                      ? "text-[#D4A017]"
-                      : "text-white"
-                  }`}
+                  className={`fas ${item.icon} ${isActive
+                    ? "text-[#D4A017]"
+                    : "text-white"
+                    }`}
                 />
 
                 <span className="text-[11px] text-white mt-1">

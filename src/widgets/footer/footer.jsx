@@ -37,23 +37,22 @@ export default function Footer() {
             {t(`salesDepartment`)}
           </h2>
 
-          <div className="space-y-6 text-xl leading-relaxed">
+          <div className="space-y-6 text-[15px] md:text-xl leading-relaxed">
             <div>
-              <p className="text-2xl">{t('dehlaviSlogan')}</p>
+              <p className="">{t('dehlaviSlogan')}</p>
             </div>
 
-            <div className="flex items-center gap-2">
-              <p>👉 {t('contactUs')}</p>
+            <div className="md:flex  md:items-center gap-2">
+              <p className="text-[15px] md:text-2xl">👉 {t('contactUs')}</p>
               <a href="tel:+992 077000666">
-                    <span className="text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
+                    <h1 className="text-[10px] md:text-2xl  text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
                     +992 077000666
-                    </span>
+                    </h1>
                   </a>
             </div>
 
             <div>
               <p>📍 {t('address')} </p>
-              <p className="text-gray-300">{t('landmark')}</p>
             </div>
           </div>
         </div>

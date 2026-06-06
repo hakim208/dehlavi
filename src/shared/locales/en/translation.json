@@ -104,7 +104,7 @@
     "project1": {
       "name": "Premium residential complex",
       "description": "Premium residential complex with modern design",
-      "address": "55 Malika Sobirova Street, Dushanbe\n(near Hilton and Isra)"
+      "address": "55 Malika Sobirova Street, Dushanbe"
     },
   "newss": {
       "title": "News",
@@ -121,7 +121,7 @@
     "projectsSubtitle": "High-quality construction products",
     "project1Name": "Premium residential complex",
     "project1Description": "Premium residential complex with modern design",
-    "project1Address": "55 Malika Sobirova Street, Dushanbe\n(near Hilton and Isra)",
+    "project1Address": "55 Malika Sobirova Street, Dushanbe",
     "project2Name": "Family residential complex",
     "project2Description": "Multi-storey building with commercial premises",
     "project2Address": "Khujand, Ismoili Somoni avenue 45",
@@ -133,7 +133,6 @@
     "dehlaviSlogan": "Dehlavi Residential Complex — the space of your dreams.",
     "contactUs": "Message us on WhatsApp or call the number below",
     "address": "55 Malika Sobirova Street, Dushanbe",
-  "landmark": "(near Hilton and Isra)",
   "socialMedia": "Follow us on social media",
   "workingHours": "Working Hours",
   "salesDepartments": "Sales Departments:",
