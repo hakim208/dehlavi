@@ -36,6 +36,24 @@ const Wwiper = () => {
       title: t('swiper.slide3.title') || "ПРЕМИУМ КОМФОРТ",
       subtitle: t('swiper.slide3.subtitle') || "ДЛЯ ВАШЕЙ СЕМЬИ",
       image: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780681687/img3_gvz6wr.jpg"
+    },
+    {
+      id: 4,
+      title: t('swiper.slide4.title') || "ДОМ ВАШЕЙ МЕЧТЫ",
+      subtitle: t('swiper.slide4.subtitle') || "НАЧИНАЕТСЯ ЗДЕСЬ",
+      image: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780741792/photo_2026-04-22_17-04-55_2_n7bc1k.jpg"
+    },
+    {
+      id: 5,
+      title: t('swiper.slide5.title') || "КОМФОРТ, КОТОРЫЙ",
+      subtitle: t('swiper.slide5.subtitle') || "ВЫ ЗАСЛУЖИВАЕТЕ",
+      image: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780741804/photo_2026-04-22_17-04-54_v0drtq.jpg"
+    },
+    {
+      id: 6,
+      title: t('swiper.slide6.title') || "ВАШ НОВЫЙ АДРЕС",
+      subtitle: t('swiper.slide6.subtitle') || "УСПЕХА",
+      image: "https://res.cloudinary.com/dtvuzg801/image/upload/v1780741761/photo_2026-04-22_17-05-42_ffaw4u.jpg"
     }
   ];
 

@@ -37,14 +37,14 @@ export default function Footer() {
             {t(`salesDepartment`)}
           </h2>
 
-          <div className="space-y-6 text-[14px] leading-relaxed">
+          <div className="space-y-6 text-xl leading-relaxed">
             <div>
-              <p>ЖК Деҳлавӣ — простор вашей мечты.</p>
+              <p className="text-2xl">{t('dehlaviSlogan')}</p>
             </div>
 
             <div className="flex items-center gap-2">
-              <p>👉 Пишите в What’sApp или звоните по номеру </p>
-              <a href="tel:+998781228822">
+              <p>👉 {t('contactUs')}</p>
+              <a href="tel:+992 077000666">
                     <span className="text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
                     +992 077000666
                     </span>
@@ -52,15 +52,15 @@ export default function Footer() {
             </div>
 
             <div>
-              <p>📍 г. Душанбе, ул. Малика Собирова 55 </p>
-              <p className="text-gray-300">(ориентир Hilton, Isra)</p>
+              <p>📍 {t('address')} </p>
+              <p className="text-gray-300">{t('landmark')}</p>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
   {/* MAP */}
-  <div className="w-full h-[260px] md:h-[300px] rounded-xl overflow-hidden shadow-xl">
+  <div className="w-full h-[200px] md:h-[250px] rounded-xl overflow-hidden shadow-xl">
     <CustomMap />
   </div>
 
@@ -71,7 +71,7 @@ export default function Footer() {
     rel="noopener noreferrer"
     className="w-full bg-yellow-400 hover:bg-yellow-300 transition-all text-center py-3 rounded-xl font-semibold shadow-lg block"
   >
-    Открыть маршрут
+    {t('openRoute')}
   </a>
 </div>
       </div>
@@ -81,15 +81,15 @@ export default function Footer() {
 
         {/* PHONE */}
         <div>
-          <h3 className="text-xl font-semibold text-[#D9B45E]">Телефон</h3>
-            <a href="tel:+998781228822" className="mt-[10px]">
+          <h3 className="text-xl font-semibold text-[#D9B45E]">{t('phone')}</h3>
+            <a href="tel:+992077000666" className="mt-[10px]">
                     <span className="text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
                     +992 077000666
                     </span>
                   </a>
         </div>
 <div>
-  <h3 className="text-xl font-semibold text-[#D9B45E]">Мы в соц. сетях</h3>
+  <h3 className="text-xl font-semibold text-[#D9B45E]">{t('socialMedia')}</h3>
              <div className="flex gap-4  mt-[10px] items-center">
  {/* Facebook - Brown Theme */}
  <IconLink
@@ -133,21 +133,21 @@ export default function Footer() {
         {/* WORK TIME */}
         <div>
           <h3 className="text-xl font-semibold text-[#D9B45E] mb-3">
-            График работы
+            {t('workingHours')}
           </h3>
 
-          <p className="text-gray-300">Отделы продаж: Пн-пт 09:00 – 18:00</p>
+          <p className="text-gray-300">{t('salesDepartments')}: Пн-пт 09:00 – 18:00</p>
           <p className="text-gray-300">Вс 10:00 – 17:00</p>
 
           <p className="text-gray-300 mt-3">
-            Офис: Пн-Сб 09:00 – 18:00
+            {t('office')}: Пн-Сб 09:00 – 18:00
           </p>
         </div>
       </div>
 
       {/* COPYRIGHT */}
       <div className="text-center text-gray-400 mt-8 text-sm">
-        © 2025 ЖК ДЕҲЛАВИ. Все права защищены.
+       {t('copyright')}
       </div>
     </footer>
   );

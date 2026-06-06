@@ -12,12 +12,12 @@ const Home = () => {
       <div className="w-full bg-[#4e3627] py-5">
       <Swiper />
       </div>
+      <AboutCompanyComponent />
       <div className="mt-[90px] md:mt-[100px]">
         <ItemsList />
       </div>
-      <ConsultationSection />
       <OurProjects/>
-      <AboutCompanyComponent />
+      <ConsultationSection />
       <HomeNews/>
       </div >
 

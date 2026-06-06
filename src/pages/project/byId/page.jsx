@@ -5,7 +5,12 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import { useNewsStore } from "../../../entities/items/model/newsStore";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 const ById = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -65,19 +70,44 @@ const ById = () => {
       </motion.button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="relative group h-[400px] md:h-[550px] overflow-hidden rounded-2xl shadow-2xl"
-        >
-          <img
-            src={project.img}
-            alt={t(`project${project.id}Description`)}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+      <motion.div
+  initial={{ opacity: 0, x: -30 }}
+  animate={{ opacity: 1, x: 0 }}
+  className="
+    relative
+    h-[400px]
+    md:h-[550px]
+    overflow-hidden
+    rounded-3xl
+    shadow-[0_20px_60px_rgba(0,0,0,0.15)]
+    border
+    border-white/20
+  "
+>
+  <Swiper
+    modules={[Navigation, Pagination, Autoplay]}
+    navigation
+    pagination={{ clickable: true }}
+    autoplay={{
+      delay: 4000,
+      disableOnInteraction: false,
+    }}
+    loop
+    className="w-full h-full"
+  >
+    {project.img?.map((image, index) => (
+      <SwiperSlide key={index}>
+        <img
+          src={image}
+          alt={`${t(`project${project.id}Name`)}-${index + 1}`}
+          className="w-full h-full object-cover"
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-        </motion.div>
+  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none z-10" />
+</motion.div>
 
         <motion.div
           initial={{ opacity: 0, x: 30 }}
@@ -112,7 +142,7 @@ const ById = () => {
             {t(`project${project.id}Description`) || project.description}
           </p>
 
-          <div className="grid grid-cols-3 gap-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
+          {/* <div className="grid grid-cols-3 gap-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100">
             <div className="text-center">
               <div className="text-3xl font-bold text-[#573D2D]">
                 {project.floors}
@@ -139,7 +169,7 @@ const ById = () => {
                 м²
               </div>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>

@@ -30,6 +30,17 @@
       "title": "PREMIUM COMFORT",
       "subtitle": "FOR YOUR FAMILY",
       "description": "EXCLUSIVE LAYOUTS"
+    },"slide4": {
+      "title": "YOUR DREAM HOME",
+      "subtitle": "STARTS HERE"
+    },
+    "slide5": {
+      "title": "THE COMFORT",
+      "subtitle": "YOU DESERVE"
+    },
+    "slide6": {
+      "title": "YOUR NEW ADDRESS",
+      "subtitle": "OF SUCCESS"
     }
   },
     "chooseYourPerfectApartment": "CHOOSE YOUR PERFECT APARTMENT",
@@ -75,8 +86,12 @@
   },
   "aboutCompony": {
     "title": "About Company",
+    "description": "Founded in 2020, the company has rapidly evolved from an ambitious developer into one of the leading players in the country's construction industry. Driven by a team of experienced professionals, high quality standards, and a strong commitment to every project, we create developments that symbolize reliability, comfort, and modern living.",
     "subtitle": "One of the leading and experienced developers",
-    "description": "At DEHLAVI, we are more than just a team—we are a family united by a shared vision. We don't just construct buildings; we create a unique environment for life. Our mission is to deliver comfort, certainty for tomorrow, and true happiness!",
+    "vision": "Vision:",
+  "visionTitle": "To become one of the country's leading construction companies, recognized for its reliability, innovation, and the outstanding quality of its completed projects.",
+  "mission": "Mission:",
+  "missionTitle": "To develop high-quality, safe, and modern real estate projects that improve people's lives and create new opportunities for future generations.",
     "yearsOnMarket": "years on market",
     "successfulProjects": "successful projects",
     "brandAwards": "Brand of the Year awards",
@@ -89,20 +104,8 @@
     "project1": {
       "name": "Premium residential complex",
       "description": "Premium residential complex with modern design",
-      "address": "Dushanbe, Rudaki street 123"
+      "address": "55 Malika Sobirova Street, Dushanbe\n(near Hilton and Isra)"
     },
-    "project2": {
-      "name": "Family residential complex",
-      "description": "Multi-storey building with commercial premises",
-      "address": "Khujand, Ismoili Somoni avenue 45"
-    },
-    "project3": {
-      "name": "Modern residential complex",
-      "description": "Modern residential complex with underground parking",
-      "address": "Bokhtar, Navobod district 8"
-    },
-    "floors": "floors",
-    "apartments": "apartments",
   "newss": {
       "title": "News",
       "allNews": "All news",
@@ -118,7 +121,7 @@
     "projectsSubtitle": "High-quality construction products",
     "project1Name": "Premium residential complex",
     "project1Description": "Premium residential complex with modern design",
-    "project1Address": "Dushanbe, Rudaki street 123",
+    "project1Address": "55 Malika Sobirova Street, Dushanbe\n(near Hilton and Isra)",
     "project2Name": "Family residential complex",
     "project2Description": "Multi-storey building with commercial premises",
     "project2Address": "Khujand, Ismoili Somoni avenue 45",
@@ -126,5 +129,15 @@
     "project3Description": "Modern residential complex with underground parking",
     "project3Address": "Bokhtar, Navobod district 8",
     "back": "Back",
-    "home": "Home"
+    "home": "Home",
+    "dehlaviSlogan": "Dehlavi Residential Complex — the space of your dreams.",
+    "contactUs": "Message us on WhatsApp or call the number below",
+    "address": "55 Malika Sobirova Street, Dushanbe",
+  "landmark": "(near Hilton and Isra)",
+  "socialMedia": "Follow us on social media",
+  "workingHours": "Working Hours",
+  "salesDepartments": "Sales Departments:",
+  "office": "Office:",
+  "copyright": "© 2025 Dehlavi Residential Complex. All rights reserved.",
+  "openRoute": "Open Route"
 }

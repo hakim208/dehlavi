@@ -55,6 +55,12 @@ export default function Header({ footerRef }) {
       label: t("home"),
     },
     {
+      id: "company",
+      path: "/aboutCompany",
+      icon: "fa-users",
+      label: t("company"),
+    },
+    {
       id: "projects",
       path: "/projects",
       icon: "fa-building",
@@ -65,12 +71,6 @@ export default function Header({ footerRef }) {
       path: "/news",
       icon: "fa-newspaper",
       label: t("news"),
-    },
-    {
-      id: "company",
-      path: "/aboutCompany",
-      icon: "fa-users",
-      label: t("company"),
     },
   ];
 
@@ -138,20 +138,22 @@ export default function Header({ footerRef }) {
 
                 return (
                   <Link
-                    key={item.id}
-                    to={item.path}
-                    className={`
-                      transition-all font-medium
-                      hover:text-[#D4A017]
-                      ${
-                        isActive
-                          ? "text-[#D4A017]"
-                          : "text-white"
-                      }
-                    `}
-                  >
-                    {item.label}
-                  </Link>
+  key={item.id}
+  to={item.path}
+  className={`
+    transition-all font-medium px-3 py-2
+    hover:text-[#D4A017]
+    hover:border hover:border-[#D4A017]
+    hover:rounded-xl
+
+    ${isActive
+      ? "text-[#D4A017] border border-[#D4A017] rounded-xl"
+      : "text-white border border-transparent"
+    }
+  `}
+>
+  {item.label}
+</Link>
                 );
               })}
             </div>
@@ -229,7 +231,7 @@ export default function Header({ footerRef }) {
         </div>
       </header>
 
-      <div className="md:hidden flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
+      <div className="md:hidden sm:blok flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
   {/* Left Side */}
   <div className="flex items-center gap-3">
     <Link to="/">

@@ -5,11 +5,9 @@ const AboutCompanyComponent = () => {
   const { t } = useTranslation();
 
   const stats = [
-    { number: "21", label: t('aboutCompony.yearsOnMarket') || "год на рынке" },
-    { number: "14", label: t('aboutCompony.successfulProjects') || "успешных проектов" },
-    { number: "6", label: t('aboutCompony.brandAwards') || 'наград "Бренд года"' },
-    { number: "3000+", label: t('aboutCompony.happyFamilies') || "счастливых семей" },
-    { number: "700000M²+", label: t('aboutCompony.projectArea') || "площадь проектов" }
+    // { number: "2", label: t('aboutCompony.successfulProjects') || "успешных проектов" },
+    // { number: "3000+", label: t('aboutCompony.happyFamilies') || "счастливых семей" },
+    // { number: "700000M²+", label: t('aboutCompony.projectArea') || "площадь проектов" }
   ];
 
   const containerVariants = {
@@ -53,7 +51,7 @@ const AboutCompanyComponent = () => {
       <div
         className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+          backgroundImage: `url('https://res.cloudinary.com/dtvuzg801/image/upload/v1780681626/img1_bujsh2.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -78,12 +76,21 @@ const AboutCompanyComponent = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#D9B45E]">
                 {t('aboutCompony.title') || "О компании"}
               </h2>
-              <p className="text-xl md:text-2xl font-light mb-6 text-gray-200">
-                {t('aboutCompony.subtitle') || "Один из ведущих и опытных девелоперов"}
-              </p>
               <p className="text-lg leading-relaxed text-gray-300">
                 {t('aboutCompony.description') || "Murad Buildings, команда профессионалов, ставшая единой семьей, сплоченная единством мысли и духа во имя создания уникальных объектов недвижимости, призванная приносить счастье, радость и комфорт людям!"}
               </p>
+              <h2 className="text-sm md:text-2xl font-bold mb-2 text-[#D9B45E]">
+                {t('aboutCompony.mission') || "Миссия"}
+              </h2>
+              <h2 className="text-lg leading-relaxed text-gray-300">
+                {t('aboutCompony.missionTitle') || "Миссия"}
+              </h2>
+              <h2 className="text-sm md:text-2xl font-bold mb-2 text-[#D9B45E]">
+                {t('aboutCompony.vision') || "Видение"}
+              </h2>
+              <h2 className="text-lg leading-relaxed text-gray-300">
+                {t('aboutCompony.visionTitle')}
+              </h2>
             </motion.div>
 
             {/* Stats Grid */}

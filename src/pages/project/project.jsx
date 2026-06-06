@@ -72,7 +72,7 @@ const Project = () => {
             {/* Image Container */}
             <div className="relative overflow-hidden h-56">
               <motion.img
-                src={project.img}
+                src={project.img[0]}
                 alt={project.description}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 whileHover={{ scale: 1.05 }}
@@ -95,7 +95,7 @@ const Project = () => {
               </div>
 
               {/* Project Stats */}
-              <div className="grid grid-cols-3 gap-4 py-4 border-t border-gray-100">
+              {/* <div className="grid grid-cols-3 gap-4 py-4 border-t border-gray-100">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-[#573D2D]">{project.floors}</div>
                   <div className="text-xs text-gray-500 mt-1">{t('floors')}</div>
@@ -108,7 +108,7 @@ const Project = () => {
                   <div className="text-2xl font-bold text-[#573D2D]">{project.area}</div>
                   <div className="text-xs text-gray-500 mt-1">м²</div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Address */}
               <div className="pt-4 border-t border-gray-100">
