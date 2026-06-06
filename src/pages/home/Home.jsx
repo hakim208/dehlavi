@@ -13,10 +13,10 @@ const Home = () => {
       <Swiper />
       </div>
       <AboutCompanyComponent />
+      <OurProjects/>
       <div className="mt-[90px] md:mt-[100px]">
         <ItemsList />
       </div>
-      <OurProjects/>
       <ConsultationSection />
       <HomeNews/>
       </div >
