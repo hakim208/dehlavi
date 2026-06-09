@@ -35,44 +35,27 @@ const IconLink = ({ href, label, children }) => (
 
 export default function Header({ footerRef }) {
   const location = useLocation();
-
   const { t, i18n } = useTranslation();
+  const { theme, setTheme, lang, setLang } = useThemeStore();
 
-  const { theme, setTheme, lang, setLang } =
-    useThemeStore();
-
-  const [isScrolled, setIsScrolled] =
-    useState(false);
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] =
-    useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    {
-      id: "home",
-      path: "/",
-      icon: "fa-home",
-      label: t("home"),
-    },
-    {
-      id: "company",
-      path: "/aboutCompany",
-      icon: "fa-users",
-      label: t("company"),
-    },
-    {
-      id: "projects",
-      path: "/projects",
-      icon: "fa-building",
-      label: t("projects"),
-    },
-    {
-      id: "news",
-      path: "/news",
-      icon: "fa-newspaper",
-      label: t("news"),
-    },
+    { id: "home", path: "/", icon: "fa-home", label: t("home") },
+    { id: "company", path: "/aboutCompany", icon: "fa-users", label: t("company") },
+    { id: "projects", path: "/projects", icon: "fa-building", label: t("projects") },
+    { id: "news", path: "/news", icon: "fa-newspaper", label: t("news") },
   ];
+
+  // Ислоҳ: Хониши забони захирашуда ҳангоми обновити саҳифа
+  useEffect(() => {
+    const savedLang = localStorage.getItem("app_lang");
+    if (savedLang) {
+      i18n.changeLanguage(savedLang);
+      setLang(savedLang);
+    }
+  }, [i18n, setLang]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,30 +63,17 @@ export default function Header({ footerRef }) {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
-    setTheme(
-      theme === "light" ? "dark" : "light"
-    );
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setLang(lng);
     localStorage.setItem("app_lang", lng);
-  };
-
-  const scrollToFooter = () => {
-    footerRef?.current?.scrollIntoView({
-      behavior: "smooth",
-    });
   };
 
   return (
@@ -133,24 +103,22 @@ export default function Header({ footerRef }) {
               </Link>
 
               {navItems.map((item) => {
-                const isActive =
-                  location.pathname === item.path;
+                const isActive = location.pathname === item.path;
 
                 return (
                   <Link
                     key={item.id}
                     to={item.path}
                     className={`
-    transition-all font-medium px-3 py-2
-    hover:text-[#D4A017]
-    hover:border hover:border-[#D4A017]
-    hover:rounded-xl
-
-    ${isActive
+                      transition-all font-medium px-3 py-2
+                      hover:text-[#D4A017]
+                      hover:border hover:border-[#D4A017]
+                      hover:rounded-xl
+                      ${isActive
                         ? "text-[#D4A017] border border-[#D4A017] rounded-xl"
                         : "text-white border border-transparent"
                       }
-  `}
+                    `}
                   >
                     {item.label}
                   </Link>
@@ -161,68 +129,37 @@ export default function Header({ footerRef }) {
             {/* RIGHT */}
             <div className="flex items-center gap-4">
               <div className="flex gap-2">
-                <IconLink
-                  href="https://instagram.com/dehlavi_dushanbe"
-                  label="instagram"
-                >
+                <IconLink href="https://instagram.com/dehlavi_dushanbe" label="instagram">
                   <Instagram size={18} />
                 </IconLink>
-
-                <IconLink
-                  href="https://t.me/JkDehlavi"
-                  label="telegram"
-                >
+                <IconLink href="https://t.me/JkDehlavi" label="telegram">
                   <Send size={18} />
                 </IconLink>
-
-                <IconLink
-                  href="https://wa.me/992077000666"
-                  label="whatsapp"
-                >
+                <IconLink href="https://wa.me/992077000666" label="whatsapp">
                   <MessageCircle size={18} />
                 </IconLink>
-
-                <IconLink
-                  href="https://facebook.com"
-                  label="facebook"
-                >
+                <IconLink href="https://facebook.com" label="facebook">
                   <Facebook size={18} />
                 </IconLink>
               </div>
 
-              <a
-                href="tel:+992077000666"
-                className="text-white font-semibold"
-              >
+              <a href="tel:+992077000666" className="text-white font-semibold">
                 +992 077000666
               </a>
 
               <select
                 value={lang}
-                onChange={(e) =>
-                  changeLanguage(e.target.value)
-                }
-                className="
-                  bg-[#6d4b38]
-                  text-white
-                  px-3 py-2
-                  rounded-lg
-                  outline-none
-                "
+                onChange={(e) => changeLanguage(e.target.value)}
+                className="bg-[#6d4b38] text-white px-3 py-2 rounded-lg outline-none cursor-pointer"
               >
-                <option value="ru">🇷🇺 RU</option>
-                <option value="en">🇺🇸 EN</option>
-                <option value="tj">🇹🇯 TJ</option>
+                <option value="ru">RU</option>
+                <option value="en">EN</option>
+                <option value="tj">TJ</option>
               </select>
 
               <button
                 onClick={toggleTheme}
-                className="
-                  w-12 h-12 rounded-full
-                  bg-[#6d4b38]
-                  flex items-center justify-center
-                  text-white
-                "
+                className="w-12 h-12 rounded-full bg-[#6d4b38] flex items-center justify-center text-white"
               >
                 {theme === "light" ? "🌙" : "☀️"}
               </button>
@@ -231,8 +168,8 @@ export default function Header({ footerRef }) {
         </div>
       </header>
 
-      <div className="md:hidden sm:blok flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
-        {/* Left Side */}
+      {/* MOBILE TOP */}
+      <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-[#6d4b38]">
         <div className="flex items-center gap-3">
           <Link to="/">
             <img
@@ -241,49 +178,25 @@ export default function Header({ footerRef }) {
               className="w-10 h-10 object-contain"
             />
           </Link>
-
-          <a
-            href="tel:+992077000666"
-            className="flex items-center gap-2 text-white text-sm font-medium"
-          >
-            <i className="fas fa-phone-alt text-xs"></i>
+          <a href="tel:+992077000666" className="text-white text-sm font-medium">
             <span>+992 077 000 666</span>
           </a>
         </div>
-        <div className="flex items-center">
+
+        <div className="flex items-center gap-2">
           <select
             value={lang}
-            onChange={(e) =>
-              changeLanguage(e.target.value)
-            }
-            className="
-                  bg-[#6d4b38]
-                  text-white
-                  px-1 py-1
-                  rounded-lg
-                  outline-none
-                  text-[11px]
-                "
+            onChange={(e) => changeLanguage(e.target.value)}
+            className="bg-[#6d4b38] text-white px-1 py-1 rounded-lg outline-none text-[11px] cursor-pointer"
           >
-            <option value="ru">🇷🇺 RU</option>
-            <option value="en">🇺🇸 EN</option>
-            <option value="tj">🇹🇯 TJ</option>
+            <option value="ru">RU</option>
+            <option value="en">EN</option>
+            <option value="tj">TJ</option>
           </select>
 
           <button
             onClick={toggleTheme}
-            className="
-                  w-12 h-12 rounded-full
-                  bg-[#6d4b38]
-                  flex items-center justify-center
-                  text-white
-                "
-          ></button>
-
-          {/* Right Side */}
-          <button
-            onClick={toggleTheme}
-            className="text-white text-xl"
+            className="text-white text-xl p-2"
           >
             {theme === "light" ? "🌙" : "☀️"}
           </button>
@@ -303,50 +216,18 @@ export default function Header({ footerRef }) {
         "
       >
         <div className="grid grid-cols-5 h-[75px]">
-
           {navItems.slice(0, 2).map((item) => {
-            const isActive =
-              location.pathname === item.path;
-
+            const isActive = location.pathname === item.path;
             return (
-              <Link
-                key={item.id}
-                to={item.path}
-                className="
-                  flex flex-col
-                  items-center
-                  justify-center
-                "
-              >
-                <i
-                  className={`fas ${item.icon} ${isActive
-                    ? "text-[#D4A017]"
-                    : "text-white"
-                    }`}
-                />
-
-                <span className="text-[11px] text-white mt-1">
-                  {item.label}
-                </span>
+              <Link key={item.id} to={item.path} className="flex flex-col items-center justify-center">
+                <i className={`fas ${item.icon} ${isActive ? "text-[#D4A017]" : "text-white"}`} />
+                <span className="text-[11px] text-white mt-1">{item.label}</span>
               </Link>
             );
           })}
 
-          <Link
-            to="/"
-            className="
-              flex items-center justify-center
-              -mt-8
-            "
-          >
-            <div
-              className="
-                w-16 h-16 rounded-full
-                bg-[#D4A017]
-                flex items-center justify-center
-                border-4 border-[#573D2D]
-              "
-            >
+          <Link to="/" className="flex items-center justify-center -mt-8">
+            <div className="w-16 h-16 rounded-full bg-[#D4A017] flex items-center justify-center border-4 border-[#573D2D]">
               <img
                 src="https://res.cloudinary.com/dtvuzg801/image/upload/v1780684045/logo3d_nd8ga5.png"
                 alt="logo"
@@ -356,29 +237,11 @@ export default function Header({ footerRef }) {
           </Link>
 
           {navItems.slice(2).map((item) => {
-            const isActive =
-              location.pathname === item.path;
-
+            const isActive = location.pathname === item.path;
             return (
-              <Link
-                key={item.id}
-                to={item.path}
-                className="
-                  flex flex-col
-                  items-center
-                  justify-center
-                "
-              >
-                <i
-                  className={`fas ${item.icon} ${isActive
-                    ? "text-[#D4A017]"
-                    : "text-white"
-                    }`}
-                />
-
-                <span className="text-[11px] text-white mt-1">
-                  {item.label}
-                </span>
+              <Link key={item.id} to={item.path} className="flex flex-col items-center justify-center">
+                <i className={`fas ${item.icon} ${isActive ? "text-[#D4A017]" : "text-white"}`} />
+                <span className="text-[11px] text-white mt-1">{item.label}</span>
               </Link>
             );
           })}

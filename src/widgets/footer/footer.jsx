@@ -42,11 +42,21 @@ export default function Footer() {
               <p className="">{t('dehlaviSlogan')}</p>
             </div>
 
-            <div className="md:flex  md:items-center gap-2">
-              <p className="text-[15px] md:text-2xl">👉 {t('contactUs')}</p>
-              <a href="tel:+992 077000666">
-                <h1 className="text-[10px] md:text-2xl  text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
-                  +992 077000666
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 w-full">
+              {/* Матн */}
+              <div className="w-full md:w-[70%]">
+                <p className="text-xl md:text-2xl font-medium text-white">
+                  👉 {t('contactUs')}
+                </p>
+              </div>
+
+              {/* Рақами телефон */}
+              <a
+                href="tel:+992077000666"
+                className="block shrink-0"
+              >
+                <h1 className="text-lg md:text-xl text-white font-semibold hover:text-[#D4A017] transition-colors whitespace-nowrap">
+                  +992 077 000 666
                 </h1>
               </a>
             </div>
