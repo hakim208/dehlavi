@@ -28,13 +28,13 @@ const ApartmentModal = ({ isOpen, onClose, apartment }) => {
     try {
       const fullPhone = `${formData.countryCode} ${formData.phone}`;
       const message = `🏠 НОВАЯ ЗАЯВКА НА КВАРТИРУ:\n\n` +
-                      `🏢 Этаж: ${apartment?.floor || "---"}\n\n` +
+                      `🏢 комната: ${apartment?.floor || "---"}\n\n` +
                       `👤 Имя: ${formData.name}\n` +
                       `📱 Телефон: ${fullPhone}\n` +
                       `⏰ Время: ${new Date().toLocaleString()}`;
 
-      await axios.post(`https://api.telegram.org/bot8225601828:AAHATMxK8myZTsnbiqAg9hjld_bVrUk7Knc/sendMessage`, {
-        chat_id: "6153606408",
+      await axios.post(`https://api.telegram.org/bot7983063572:AAFfFDthgSRC_1mq6CksDtaCJYySkoYmX-I/sendMessage`, {
+        chat_id: "8390299668",
         text: message
       });
 

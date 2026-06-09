@@ -38,8 +38,8 @@ const ConsultationSection = () => {
     try {
       const fullPhone = `${formData.countryCode} ${formData.phone}`;
 
-      await axios.post(`https://api.telegram.org/bot8225601828:AAHATMxK8myZTsnbiqAg9hjld_bVrUk7Knc/sendMessage`, {
-        chat_id: "6153606408",
+      await axios.post(`https://api.telegram.org/bot7983063572:AAFfFDthgSRC_1mq6CksDtaCJYySkoYmX-I/sendMessage`, {
+        chat_id: "8390299668",
         text: `📞 НОВАЯ ЗАЯВКА НА КОНСУЛЬТАЦИЮ:\n\n👤 Имя: ${formData.name}\n📱 Телефон: ${fullPhone}\n🌍 Код страны: ${formData.countryCode}\n\n⏰ Время: ${new Date().toLocaleString()}`
       });
 
@@ -98,13 +98,13 @@ const ConsultationSection = () => {
 
   return (
     <section
-  className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
-  style={{
-    background: `linear-gradient(135deg, #F5F1ED 0%, #E8E1D9 100%)`,
-    borderTop: '8px solid #573D2D',
-  }}
->
-  {/* Тасвири замина - вақте ки имконият дорад, идома диҳед */}
+      className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, #F5F1ED 0%, #E8E1D9 100%)`,
+        borderTop: '8px solid #573D2D',
+      }}
+    >
+      {/* Тасвири замина - вақте ки имконият дорад, идома диҳед */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: `url(https://res.cloudinary.com/dtvuzg801/image/upload/v1780681626/img1_bujsh2.jpg)`,

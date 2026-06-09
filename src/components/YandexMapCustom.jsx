@@ -4,7 +4,7 @@ import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 
 export default function CustomMap() {
   const location = {
-    coords: [38.559772, 68.787038],
+    coords: [38.563938, 68.812249],
   };
 
   return (

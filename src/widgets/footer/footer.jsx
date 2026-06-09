@@ -24,9 +24,9 @@ const IconLink = ({ href, label, children }) => (
 
 
 export default function Footer() {
-  const {t}=useTranslation()
+  const { t } = useTranslation()
   return (
-    <footer  className="bg-[#573D2D] text-white pt-16 pb-10 relative">
+    <footer className="bg-[#573D2D] text-white pt-16 pb-10 relative">
 
       {/* TOP PART — LEFT TEXT + MAP */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -45,10 +45,10 @@ export default function Footer() {
             <div className="md:flex  md:items-center gap-2">
               <p className="text-[15px] md:text-2xl">👉 {t('contactUs')}</p>
               <a href="tel:+992 077000666">
-                    <h1 className="text-[10px] md:text-2xl  text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
-                    +992 077000666
-                    </h1>
-                  </a>
+                <h1 className="text-[10px] md:text-2xl  text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
+                  +992 077000666
+                </h1>
+              </a>
             </div>
 
             <div>
@@ -58,21 +58,21 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-  {/* MAP */}
-  <div className="w-full h-[200px] md:h-[250px] rounded-xl overflow-hidden shadow-xl">
-    <CustomMap />
-  </div>
+          {/* MAP */}
+          <div className="w-full h-[200px] md:h-[250px] rounded-xl overflow-hidden shadow-xl">
+            <CustomMap />
+          </div>
 
-  {/* BUTTON */}
-  <a
-    href="https://maps.app.goo.gl/k3rDo1Qm9WMfcBFL6?g_st=atm"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-full bg-yellow-400 hover:bg-yellow-300 transition-all text-center py-3 rounded-xl font-semibold shadow-lg block"
-  >
-    {t('openRoute')}
-  </a>
-</div>
+          {/* BUTTON */}
+          <a
+            href="https://yandex.com/maps/10318/dushanbe/house/YkEYfgZiS0EDQF1ifXl3cnRmZg==/?ll=68.812306%2C38.563918&pt=68.812249%2C38.563938&z=20.28"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-yellow-400 hover:bg-yellow-300 transition-all text-center py-3 rounded-xl font-semibold shadow-lg block"
+          >
+            {t('openRoute')}
+          </a>
+        </div>
       </div>
 
       {/* BOTTOM ROW — PHONE + SOCIAL + WORK TIME */}
@@ -81,52 +81,52 @@ export default function Footer() {
         {/* PHONE */}
         <div>
           <h3 className="text-xl font-semibold text-[#D9B45E]">{t('phone')}</h3>
-            <a href="tel:+992077000666" className="mt-[10px]">
-                    <span className="text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
-                    +992 077000666
-                    </span>
-                  </a>
+          <a href="tel:+992077000666" className="mt-[10px]">
+            <span className="text-white font-semibold text-sm hover:text-[#D4A017] transition-colors">
+              +992 077000666
+            </span>
+          </a>
         </div>
-<div>
-  <h3 className="text-xl font-semibold text-[#D9B45E]">{t('socialMedia')}</h3>
-             <div className="flex gap-4  mt-[10px] items-center">
- {/* Facebook - Brown Theme */}
- <IconLink
-     href="https://www.facebook.com/profile.php?id=61584472747712"
-     label="Facebook"
-     className="bg-gradient-to-br from-[#573D2D] to-[#8B5A2B] hover:from-[#8B5A2B] hover:to-[#573D2D] hover:shadow-[0_0_20px_rgba(87,61,45,0.4)] group"
-   >
-     <Facebook size={18} className="group-hover:scale-110 transition-transform text-white" />
-   </IconLink>
+        <div>
+          <h3 className="text-xl font-semibold text-[#D9B45E]">{t('socialMedia')}</h3>
+          <div className="flex gap-4  mt-[10px] items-center">
+            {/* Facebook - Brown Theme */}
+            <IconLink
+              href="https://www.facebook.com/profile.php?id=61584472747712"
+              label="Facebook"
+              className="bg-gradient-to-br from-[#573D2D] to-[#8B5A2B] hover:from-[#8B5A2B] hover:to-[#573D2D] hover:shadow-[0_0_20px_rgba(87,61,45,0.4)] group"
+            >
+              <Facebook size={18} className="group-hover:scale-110 transition-transform text-white" />
+            </IconLink>
 
-   {/* Instagram - Brown Theme */}
-   <IconLink
-     href="https://instagram.com/dehlavi_dushanbe"
-     label="Instagram"
-     className="bg-gradient-to-br from-[#573D2D] via-[#8B5A2B] to-[#D4A017] hover:shadow-[0_0_20px_rgba(212,160,23,0.4)] group"
-   >
-     <Instagram size={18} className="group-hover:scale-110 transition-transform text-white" />
-   </IconLink>
+            {/* Instagram - Brown Theme */}
+            <IconLink
+              href="https://instagram.com/dehlavi_dushanbe"
+              label="Instagram"
+              className="bg-gradient-to-br from-[#573D2D] via-[#8B5A2B] to-[#D4A017] hover:shadow-[0_0_20px_rgba(212,160,23,0.4)] group"
+            >
+              <Instagram size={18} className="group-hover:scale-110 transition-transform text-white" />
+            </IconLink>
 
-   {/* Telegram - Brown Theme */}
-   <IconLink
-     href="https://t.me/JkDehlavi"
-     label="Telegram"
-     className="bg-gradient-to-br from-[#573D2D] to-[#8B5A2B] hover:from-[#8B5A2B] hover:to-[#573D2D] hover:shadow-[0_0_20px_rgba(139,90,43,0.4)] group"
-   >
-     <Send size={18} className="group-hover:scale-110 transition-transform text-white" />
-   </IconLink>
+            {/* Telegram - Brown Theme */}
+            <IconLink
+              href="https://t.me/JkDehlavi"
+              label="Telegram"
+              className="bg-gradient-to-br from-[#573D2D] to-[#8B5A2B] hover:from-[#8B5A2B] hover:to-[#573D2D] hover:shadow-[0_0_20px_rgba(139,90,43,0.4)] group"
+            >
+              <Send size={18} className="group-hover:scale-110 transition-transform text-white" />
+            </IconLink>
 
-   {/* WhatsApp - Additional */}
-   <IconLink
-     href="https://wa.me/992077000666"
-     label="WhatsApp"
-     className="bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] group"
-   >
-     <MessageCircle size={18} className="group-hover:scale-110 transition-transform text-white" />
-   </IconLink>
- </div>
-</div>
+            {/* WhatsApp - Additional */}
+            <IconLink
+              href="https://wa.me/992077000666"
+              label="WhatsApp"
+              className="bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#25D366] hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] group"
+            >
+              <MessageCircle size={18} className="group-hover:scale-110 transition-transform text-white" />
+            </IconLink>
+          </div>
+        </div>
 
 
         {/* WORK TIME */}
@@ -146,7 +146,7 @@ export default function Footer() {
 
       {/* COPYRIGHT */}
       <div className="text-center text-gray-400 mt-8 text-sm">
-       {t('copyright')}
+        {t('copyright')}
       </div>
     </footer>
   );
